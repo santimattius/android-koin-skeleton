@@ -1,0 +1,73 @@
+# This is a basic workflow to help you get started with Actions
+name: Checks
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+jobs:
+  detekt:
+    name: Detekt - Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          ref: ${{ github.head_ref }}
+#      - name: Create Google Services JSON File
+#        env:
+#          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+#        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
+      - name: Setup API Key
+        env:
+          APIKEY: "Hello Secret"
+        run: echo apiKey="$APIKEY" > ./local.properties
+      - name: DeteKt
+        uses: natiginfo/action-detekt-all@1.23.6
+        with:
+          args: --config config/detekt/detekt.yml
+  tests:
+    name: Tests
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set Up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+#      - name: Create Google Services JSON File
+#        env:
+#          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+#        run: echo $GOOGLE_SERVICES_JSON | base64 -Dd > ./app/google-services.json
+      - name: Setup API Key
+        env:
+          APIKEY: "Hello Secret"
+        run: echo apiKey="$APIKEY" > ./local.properties
+      - name: Run Tests
+        run: ./gradlew app:testDebugUnitTestCoverage
+
+      - name: Generate Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: app/build/reports/jacoco/testDebugUnitTestCoverage
+
+      - name: Download Test Reports Folder
+        uses: actions/download-artifact@v4
+        with:
+          name: report
+          path: app/build/reports/jacoco/testDebugUnitTestCoverage
+      - name: Upload Test Report
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: app/build/reports/jacoco/testDebugUnitTestCoverage/testDebugUnitTestCoverage.xml # optional
+          flags: unittests
+          name: pull-request
+          fail_ci_if_error: true
+          verbose: true
