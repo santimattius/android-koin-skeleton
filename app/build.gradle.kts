@@ -7,7 +7,6 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.ksp)
     alias(libs.plugins.detekt)
-    alias(libs.plugins.hilt)
     alias(libs.plugins.google.secrets.gradle.plugin)
     alias(libs.plugins.automattic.measure.builds)
 }
@@ -72,6 +71,12 @@ android {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
         }
     }
+    // Set KSP sourceSet
+    applicationVariants.forEach { variant ->
+        variant.sourceSets.forEach {
+            it.javaDirectories += files("build/generated/ksp/${variant.name}/kotlin")
+        }
+    }
 }
 
 composeCompiler {
@@ -98,12 +103,17 @@ measureBuilds {
     }
 }
 
+ksp {
+    arg("KOIN_CONFIG_CHECK","true")
+}
+
 dependencies {
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.compose)
+    implementation(libs.activity.compose)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
@@ -115,9 +125,12 @@ dependencies {
     implementation(libs.gson.core)
     testImplementation(libs.mockwebserver)
 
-    implementation(libs.hilt.android)
-    implementation(libs.hilt.navigation)
-    ksp(libs.hilt.compiler)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
+    compileOnly(libs.koin.annotations.core)
+    ksp(libs.koin.annotations.compiler)
 
     implementation(libs.coil.core)
 
