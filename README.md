@@ -121,7 +121,7 @@ jobs:
 Below you will find the libraries used to build the template and according to my criteria the most
 used in android development so far.
 
-- **[Hilt](https://developer.android.com/training/dependency-injection/hilt-android)**, dependencies provider.
+- **[Koin](https://insert-koin.io/)**, dependencies provider.
 - **[Retrofit](https://square.github.io/retrofit/)**, networking.
 - **[Gson](https://github.com/google/gson)**, json parser.
 - **[Coil](https://coil-kt.github.io/coil/compose/)**, with image loader.
