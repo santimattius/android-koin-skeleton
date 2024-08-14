@@ -2,11 +2,8 @@
 # Plugins
 androidGradlePlugin = "8.5.2"
 kotlinGradlePlugin = "2.0.10"
-hiltGradlePlugin = "2.52"
-detektGradlePlugin = "1.23.6"
-googleServicePlugin = "4.4.2"
-crashlyticsPlugin = "3.0.2"
 ksp = "2.0.10-1.0.24"
+detektGradlePlugin = "1.23.6"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.1.0"
 # Core
@@ -62,10 +59,6 @@ coil_core = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 coroutine_core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
 coroutine_android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
 coroutine_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutine" }
-# Hilt
-hilt_android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
-hilt_compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
-hilt_navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompose" }
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
@@ -93,7 +86,6 @@ retrofit = ["retrofit_core", "retrofit_gson"]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinGradlePlugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hiltGradlePlugin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
