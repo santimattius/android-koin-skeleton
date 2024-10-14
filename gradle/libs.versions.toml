@@ -2,7 +2,7 @@
 # Plugins
 androidGradlePlugin = "8.7.0"
 kotlinGradlePlugin = "2.0.20"
-ksp = "2.0.20-1.0.25"
+ksp = "2.0.21-1.0.25"
 
 detektGradlePlugin = "1.23.7"
 googleSecretsPlugin = "2.0.1"
