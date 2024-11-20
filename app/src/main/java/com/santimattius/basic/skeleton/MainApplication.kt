@@ -3,20 +3,19 @@ package com.santimattius.basic.skeleton
 import android.app.Application
 import com.santimattius.basic.skeleton.di.AppModule
 import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
-import org.koin.ksp.generated.com_santimattius_basic_skeleton_di_AppModule
+import org.koin.androix.startup.KoinStartup
+import org.koin.core.annotation.KoinExperimentalAPI
+import org.koin.dsl.KoinAppDeclaration
 import org.koin.ksp.generated.defaultModule
 import org.koin.ksp.generated.module
 
-class MainApplication : Application(){
+@OptIn(KoinExperimentalAPI::class)
+class MainApplication : Application(), KoinStartup {
 
-    override fun onCreate() {
-        super.onCreate()
-        startKoin {
-            androidContext(this@MainApplication)
-            allowOverride(false)
-            modules(AppModule().module)
-            defaultModule()
-        }
+    override fun onKoinStartup(): KoinAppDeclaration = {
+        androidContext(this@MainApplication)
+        allowOverride(false)
+        modules(AppModule().module)
+        defaultModule()
     }
 }

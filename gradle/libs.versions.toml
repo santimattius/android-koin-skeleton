@@ -20,8 +20,8 @@ coroutine = "1.9.0"
 gson = "2.11.0"
 coil = "2.7.0"
 
-koinBom = "4.0.0"
-koinAnnotations = "1.4.0"
+koinBom = "4.1.0-Beta1"
+koinAnnotations = "2.0.0-Beta2"
 
 # Testing
 junit = "4.13.2"
@@ -63,6 +63,7 @@ coroutine_test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", ver
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koinBom" }
 koin-android = { group = "io.insert-koin", name = "koin-android" }
 koin-androidx-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
+koin-androidx-startup = { group = "io.insert-koin", name = "koin-androidx-startup" }
 koin-annotations-core = { group = "io.insert-koin", name = "koin-annotations" , version.ref= "koinAnnotations" }
 koin-annotations-compiler = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref= "koinAnnotations" }
 # Android core
