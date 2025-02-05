@@ -21,7 +21,7 @@ gson = "2.12.1"
 coil = "2.7.0"
 
 koinBom = "4.1.0-Beta5"
-koinAnnotations = "2.0.0-Beta3"
+koinAnnotations = "2.0.0-RC1"
 
 # Testing
 junit = "4.13.2"
