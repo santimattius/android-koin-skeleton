@@ -17,9 +17,8 @@ data class MainUiState(
 
 @KoinViewModel
 class MainViewModel : ViewModel() {
-    private val _state = MutableStateFlow(MainUiState())
-    val state: StateFlow<MainUiState>
-        get() = _state.asStateFlow()
+    private val _state = MutableStateFlow(MainUiState(message = "Hello Koin Preview"))
+    val state: StateFlow<MainUiState> = _state
 
     fun sayHello() {
         _state.update { it.copy(isLoading = true) }
