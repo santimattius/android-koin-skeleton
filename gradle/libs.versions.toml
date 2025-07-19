@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.10.1"
+androidGradlePlugin = "8.11.1"
 kotlinGradlePlugin = "2.2.0"
 ksp = "2.2.0-2.0.2"
 
