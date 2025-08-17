@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-androidGradlePlugin = "8.11.1"
+androidGradlePlugin = "8.12.0"
 kotlinGradlePlugin = "2.2.0"
 ksp = "2.2.0-2.0.2"
 
@@ -8,11 +8,11 @@ detektGradlePlugin = "1.23.8"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.1"
 # Core
-androidxComposeBom = "2025.06.01"
+androidxComposeBom = "2025.07.00"
 activityCompose = "1.10.1"
 
 coreKtx = "1.16.0"
-lifecycle = "2.9.1"
+lifecycle = "2.9.2"
 
 retrofit = "3.0.0"
 okHttp = "5.1.0"
@@ -26,7 +26,7 @@ koinAnnotations = "2.1.0"
 # Testing
 junit = "4.13.2"
 junitExt = "1.3.0"
-espressoCore = "3.6.1"
+espressoCore = "3.7.0"
 
 [libraries]
 # Define the libraries
