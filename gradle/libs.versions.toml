@@ -26,7 +26,7 @@ koinAnnotations = "2.1.0"
 # Testing
 junit = "4.13.2"
 junitExt = "1.2.1"
-espressoCore = "3.6.1"
+espressoCore = "3.7.0"
 
 [libraries]
 # Define the libraries
