@@ -1,27 +1,27 @@
 [versions]
 # Plugins
 androidGradlePlugin = "8.13.0"
-kotlinGradlePlugin = "2.2.20"
+kotlinGradlePlugin = "2.2.21"
 ksp = "2.3.0"
 
 detektGradlePlugin = "1.23.8"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
-androidxComposeBom = "2025.10.01"
+androidxComposeBom = "2025.11.00"
 activityCompose = "1.11.0"
 
 coreKtx = "1.17.0"
 lifecycle = "2.9.4"
 
 retrofit = "3.0.0"
-okHttp = "5.2.1"
+okHttp = "5.3.0"
 coroutine = "1.10.2"
 gson = "2.13.2"
 coil = "2.7.0"
 
 koinBom = "4.1.1"
-koinAnnotations = "2.2.0"
+koinAnnotations = "2.3.1"
 
 # Testing
 junit = "4.13.2"

@@ -20,14 +20,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.santimattius.basic.skeleton.di.AppModule
 import com.santimattius.basic.skeleton.ui.component.AppBar
 import com.santimattius.basic.skeleton.ui.component.BasicSkeletonContainer
 import org.koin.androidx.compose.koinViewModel
 import org.koin.compose.KoinApplicationPreview
 import org.koin.core.annotation.KoinExperimentalAPI
+import org.koin.dsl.module
 import org.koin.ksp.generated.com_santimattius_basic_skeleton_di_AppModule
-import org.koin.ksp.generated.defaultModule
+import org.koin.ksp.generated.defineComSantimattiusBasicSkeletonMainViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,7 +58,9 @@ fun DefaultPreview() {
     BasicSkeletonContainer {
         KoinApplicationPreview(application = {
             modules(com_santimattius_basic_skeleton_di_AppModule)
-            defaultModule()
+            modules(modules = module {
+                defineComSantimattiusBasicSkeletonMainViewModel()
+            })
         }) {
             MainRoute()
         }

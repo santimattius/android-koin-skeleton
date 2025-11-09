@@ -25,7 +25,7 @@ internal fun AppBar(
     TopAppBar(
         title = { Text(text = title) },
         navigationIcon = navigationIcon,
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+        colors = TopAppBarDefaults.topAppBarColors(
             containerColor = containerColor,
             titleContentColor = titleContentColor,
             navigationIconContentColor = titleContentColor,
