@@ -13,6 +13,9 @@ plugins {
 
 apply("$rootDir/gradle/coverage.gradle")
 
+kotlin {
+    jvmToolchain(17)
+}
 android {
     namespace = "com.santimattius.basic.skeleton"
     compileSdk = extraString("target_sdk_version").toInt()
@@ -59,9 +62,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-    }
+
     buildFeatures {
         compose = true
     }
@@ -104,7 +105,7 @@ measureBuilds {
 }
 
 ksp {
-    arg("KOIN_CONFIG_CHECK","true")
+    arg("KOIN_CONFIG_CHECK", "true")
 }
 
 dependencies {
