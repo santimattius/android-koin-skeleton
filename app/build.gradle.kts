@@ -12,6 +12,9 @@ plugins {
 
 apply("$rootDir/gradle/coverage.gradle")
 
+kotlin {
+    jvmToolchain(17)
+}
 android {
     namespace = "com.santimattius.basic.skeleton"
     compileSdk = extraString("target_sdk_version").toInt()
@@ -102,7 +105,7 @@ measureBuilds {
 }
 
 ksp {
-    arg("KOIN_CONFIG_CHECK","true")
+    arg("KOIN_CONFIG_CHECK", "true")
 }
 
 dependencies {
