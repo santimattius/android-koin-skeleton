@@ -7,28 +7,29 @@ on:
     branches: [ master ]
   workflow_dispatch:
 jobs:
-  detekt:
-    name: Detekt - Lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-        with:
-          fetch-depth: 1
-          ref: ${{ github.head_ref }}
-#      - name: Create Google Services JSON File
+#  TODO: disable for now: https://github.com/natiginfo/action-detekt-all/issues/73
+#  detekt:
+#    name: Detekt - Lint
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Checkout code
+#        uses: actions/checkout@v6
+#        with:
+#          fetch-depth: 1
+#          ref: ${{ github.head_ref }}
+##      - name: Create Google Services JSON File
+##        env:
+##          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+##        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
+#      - name: Setup API Key
 #        env:
-#          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
-#        run: echo $GOOGLE_SERVICES_JSON | base64 -di > ./app/google-services.json
-      - name: Setup API Key
-        env:
-          APIKEY: "Hello Secret"
-        run: echo apiKey="$APIKEY" > ./local.properties
-      - name: DeteKt
-        uses: natiginfo/action-detekt-all@2.0.0-alpha.1
-        with:
-          args: --config config/detekt/detekt.yml
+#          APIKEY: "Hello Secret"
+#        run: echo apiKey="$APIKEY" > ./local.properties
+#      - name: DeteKt
+#        uses: natiginfo/action-detekt-all@2.0.0-alpha.1
+#        with:
+#          args: --config config/detekt/detekt.yml
   tests:
     name: Tests
     runs-on: macos-latest
