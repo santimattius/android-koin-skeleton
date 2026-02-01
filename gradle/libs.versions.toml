@@ -3,13 +3,14 @@
 androidGradlePlugin = "9.0.0"
 kotlinGradlePlugin = "2.3.0"
 ksp = "2.3.4"
+koin-plugin = "0.3.0"
 
 detektGradlePlugin = "1.23.8"
 googleSecretsPlugin = "2.0.1"
 automatticMeasureBuilds = "3.2.2"
 # Core
-androidxComposeBom = "2026.01.00"
-activityCompose = "1.12.2"
+androidxComposeBom = "2026.01.01"
+activityCompose = "1.12.3"
 
 coreKtx = "1.17.0"
 lifecycle = "2.10.0"
@@ -20,8 +21,8 @@ coroutine = "1.10.2"
 gson = "2.13.2"
 coil = "2.7.0"
 
-koinBom = "4.1.1"
-koinAnnotations = "2.3.1"
+koinBom = "4.2.0-RC1"
+koinAnnotations = "4.2.0-RC1"
 
 # Testing
 junit = "4.13.2"
@@ -91,4 +92,4 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinGradlePlugin" }
-
+koin-compiler = { id = "io.insert-koin.compiler.plugin", version.ref = "koin-plugin" }
