@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import com.santimattius.basic.skeleton.ui.theme.BasicSkeletonTheme
 
@@ -17,12 +16,7 @@ fun BasicSkeletonContainer(content: @Composable () -> Unit) {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            //TODO: workaround ISSUE: https://issuetracker.google.com/issues/336842920
-            CompositionLocalProvider(
-                androidx.lifecycle.compose.LocalLifecycleOwner provides androidx.compose.ui.platform.LocalLifecycleOwner.current,
-            ) {
-                content()
-            }
+            content()
         }
     }
 }

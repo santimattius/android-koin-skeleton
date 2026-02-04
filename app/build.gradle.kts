@@ -1,10 +1,9 @@
 import com.automattic.android.measure.reporters.SlowSlowTasksMetricsReporter
 
-@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.koin.compiler)
     alias(libs.plugins.detekt)
     alias(libs.plugins.google.secrets.gradle.plugin)
     alias(libs.plugins.automattic.measure.builds)
@@ -104,8 +103,8 @@ measureBuilds {
     }
 }
 
-ksp {
-    arg("KOIN_CONFIG_CHECK", "true")
+koinCompiler {
+    userLogs = true
 }
 
 dependencies {
@@ -132,7 +131,6 @@ dependencies {
     implementation(libs.koin.androidx.startup)
 
     compileOnly(libs.koin.annotations.core)
-    ksp(libs.koin.annotations.compiler)
 
     implementation(libs.coil.core)
 

@@ -2,7 +2,7 @@
 # Plugins
 androidGradlePlugin = "9.0.0"
 kotlinGradlePlugin = "2.3.0"
-ksp = "2.3.5"
+koin-plugin = "0.3.0"
 
 detektGradlePlugin = "1.23.8"
 googleSecretsPlugin = "2.0.1"
@@ -19,8 +19,8 @@ coroutine = "1.10.2"
 gson = "2.13.2"
 coil = "2.7.0"
 
-koinBom = "4.1.1"
-koinAnnotations = "2.3.1"
+koinBom = "4.2.0-RC1"
+koinAnnotations = "4.2.0-RC1"
 
 # Testing
 junit = "4.13.2"
@@ -86,8 +86,7 @@ retrofit = ["retrofit_core", "retrofit_gson"]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detektGradlePlugin" }
-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 google-secrets-gradle-plugin = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "googleSecretsPlugin" }
 automattic-measure-builds = { id = "com.automattic.android.measure-builds", version.ref = "automatticMeasureBuilds" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlinGradlePlugin" }
-
+koin-compiler = { id = "io.insert-koin.compiler.plugin", version.ref = "koin-plugin" }

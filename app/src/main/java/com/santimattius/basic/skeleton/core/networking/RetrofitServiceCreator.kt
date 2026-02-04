@@ -1,11 +1,14 @@
 package com.santimattius.basic.skeleton.core.networking
 
 import okhttp3.OkHttpClient
+import org.koin.core.annotation.Named
+import org.koin.core.annotation.Single
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
 
-class RetrofitServiceCreator(val baseUrl: String) {
+@Single(createdAtStart = true)
+class RetrofitServiceCreator(@Named("base_url") val baseUrl: String) {
 
     private val client = OkHttpClient().newBuilder()
         .addInterceptor(ExampleInterceptor())
