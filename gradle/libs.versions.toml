@@ -19,7 +19,7 @@ coroutine = "1.10.2"
 gson = "2.13.2"
 coil = "2.7.0"
 
-koinBom = "4.2.0-RC2"
+koinBom = "4.2.0"
 koinAnnotations = "4.2.0-RC1"
 
 # Testing
