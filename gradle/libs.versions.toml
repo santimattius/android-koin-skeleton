@@ -1,6 +1,6 @@
 [versions]
 # Plugins
-androidGradlePlugin = "9.2.0"
+androidGradlePlugin = "9.2.1"
 kotlinGradlePlugin = "2.3.21"
 koin-plugin = "0.6.2"
 
