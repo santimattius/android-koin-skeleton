@@ -2,7 +2,7 @@
 # Plugins
 androidGradlePlugin = "9.2.1"
 kotlinGradlePlugin = "2.4.0"
-koin-plugin = "1.0.1"
+koin-plugin = "1.0.2"
 
 detektGradlePlugin = "1.23.8"
 googleSecretsPlugin = "2.0.1"
